@@ -31,11 +31,16 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 } */
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans+SC:100,300,400,500,700,900|Noto+Serif+SC:200,300,400,500,600,700,900);
 #app {
     position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
+    font-family: -apple-system, 'Noto Sans SC', BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.inline-block {
+    display: inline-block;
 }
 </style>
