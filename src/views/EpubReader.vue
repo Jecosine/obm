@@ -1,7 +1,7 @@
 <!--
  * @Author: Jecosine
  * @Date: 2021-01-06 20:24:35
- * @LastEditTime: 2021-01-06 23:14:16
+ * @LastEditTime: 2021-01-06 23:34:23
  * @LastEditors: Jecosine
  * @Description: Epub reader
 -->
@@ -31,14 +31,14 @@
           <i class="fa fa-bars"></i>
       </div>
       <div class="bright">
-          <i class="fa fa-bars"></i>
+          <i class="fa fa-sun-o" aria-hidden="true"></i>
       </div>
       <div class="progress">
-          <i class="fa fa-bars"></i>
+          <i class="fa fa-forward" aria-hidden="true"></i>
 
       </div>
       <div class="font">
-          <i class="fa fa-bars"></i>
+          <i class="fa fa-font" aria-hidden="true"></i>
 
       </div>
     </div>
@@ -132,6 +132,7 @@ export default {
 }
 .bottom-container {
   position: fixed;
+  background: white;
   bottom: 0;
   left: 0;
   width: 100%;
