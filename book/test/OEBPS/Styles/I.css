@@ -1,0 +1,91 @@
+/* 文本设置 */
+
+*{
+	margin:0;
+	padding:0;
+	border:none;
+}
+
+body{
+	padding:0;
+	margin-top:0;
+	margin-bottom:0;
+	margin-left: 1%;
+	margin-right: 1%;
+	line-height: 130%;
+	text-align: justify;
+}
+
+ul,ol{
+	list-style:none;
+}
+
+a{
+	text-decoration:none;
+	color:black;
+}
+
+div{
+	margin: 0px;
+	padding: 0px;
+	text-align: justify;
+}
+
+p{
+	text-indent:2em;
+	display: block;
+	line-height:1.7em;
+	margin-top: 0.4em;
+	margin-bottom: 0.4em;
+}
+
+h1{
+	font-size: 2em;
+	line-height: 120%;
+	text-align: center;
+	font-weight: bold;
+	margin-top: 0.3em;
+	margin-bottom: 0.6em;
+}
+h2{
+	font-size: 1.75em;
+	line-height: 120%;
+	text-align: center;
+	font-weight: bold;
+	margin-top: 0.5em;
+	margin-bottom: 1em;
+}
+h3{
+	font-size: 1.4em;
+	line-height: 120%;
+	text-indent: 0em;
+	font-weight: bold;
+	margin-top: 0.5em;
+	margin-bottom: 0.9em;
+}
+h4{
+	font-size: 1.25em;
+	line-height: 120%;
+	text-align: center;
+	font-weight: bold;
+	margin-top: 0.15em;
+	margin-bottom: 0.3em;
+}
+h5{
+	font-size: 1em;
+	line-height: 120%;
+	text-align: center;
+	font-weight: bold;
+	margin-top: 0.1em;
+	margin-bottom: 0.2em;
+}
+/* img */
+
+img{
+	width:100%;
+	margin-top:0.4em;
+	margin-bottom:0.4em;
+}
+.duokan-image-single{
+	text-align:center;
+}

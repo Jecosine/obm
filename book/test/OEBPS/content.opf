@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package version="2.0" unique-identifier="BookId" xmlns="http://www.idpf.org/2007/opf">
+  <metadata xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:language>en</dc:language>
+    <dc:title>欢迎来到实力至上主义的教室 漫画赠送短篇</dc:title>
+    <meta content="0.9.7" name="Sigil version" />
+    <dc:date xmlns:opf="http://www.idpf.org/2007/opf" opf:event="modification">2017-07-13</dc:date>
+    <dc:identifier id="BookId" opf:scheme="UUID">urn:uuid:ee3a07e6-f6b7-456a-a5da-dc4034c1dddc</dc:identifier>
+    <meta name="cover" content="x001.jpg" />
+  </metadata>
+  <manifest>
+    <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml"/>
+    <item id="message.xhtml" href="Text/message.xhtml" media-type="application/xhtml+xml"/>
+    <item id="chapter-1.xhtml" href="Text/chapter-1.xhtml" media-type="application/xhtml+xml"/>
+    <item id="I.css" href="Styles/I.css" media-type="text/css"/>
+    <item id="x001.jpg" href="Images/001.jpg" media-type="image/jpeg"/>
+    <item id="x003.jpg" href="Images/003.jpg" media-type="image/jpeg"/>
+    <item id="x026.jpg" href="Images/026.jpg" media-type="image/jpeg"/>
+    <item id="x1085.jpg" href="Images/1085.jpg" media-type="image/jpeg"/>
+    <item id="x1099.jpg" href="Images/1099.jpg" media-type="image/jpeg"/>
+    <item id="x1100.jpg" href="Images/1100.jpg" media-type="image/jpeg"/>
+    <item id="a47dedecab64034f194f7edba8c3793108551df0.jpg" href="Images/a47dedecab64034f194f7edba8c3793108551df0.jpg" media-type="image/jpeg"/>
+    <item id="chapter-3.xhtml" href="Text/chapter-3.xhtml" media-type="application/xhtml+xml"/>
+    <item id="chapter-4.xhtml" href="Text/chapter-4.xhtml" media-type="application/xhtml+xml"/>
+    <item id="chapter-2.xhtml" href="Text/chapter-2.xhtml" media-type="application/xhtml+xml"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="message.xhtml"/>
+    <itemref idref="chapter-1.xhtml"/>
+    <itemref idref="chapter-2.xhtml"/>
+    <itemref idref="chapter-3.xhtml"/>
+    <itemref idref="chapter-4.xhtml"/>
+  </spine>
+  <guide>
+  </guide>
+</package>

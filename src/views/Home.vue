@@ -24,8 +24,8 @@
     </div>
     <div id="content-container">
       <el-row :gutter="20">
-        <el-col span="8" v-for="(item, i) in sourceData" class="item-container" :key="i">
-          <div class="item-cover-container">
+        <el-col :span="8" v-for="(item, i) in sourceData" class="item-container" :key="i" >
+          <div class="item-cover-container" @click="$router.push({path:'/epub'})">
             <el-image class="item-cover" fit="cover" :src="item.cover || 'https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg'">
               <div slot="error" class="image-slot">
                 <i class="el-icon-notebook-1"></i>
@@ -73,6 +73,38 @@ export default {
           name: "Test Book 1",
           cover: "",
         },
+        {
+          name: "Test Book 1",
+          cover: "l",
+        },
+        {
+          name: "Test Book 1",
+          cover: "",
+        },
+        {
+          name: "Test Book 1",
+          cover: "",
+        },
+        {
+          name: "Test Book 1",
+          cover: "",
+        },
+        {
+          name: "Test Book 1",
+          cover: "l",
+        },
+        {
+          name: "Test Book 1",
+          cover: "",
+        },
+        {
+          name: "Test Book 1",
+          cover: "",
+        },
+        {
+          name: "Test Book 1",
+          cover: "",
+        },
       ],
       searchText: "",
     };
@@ -87,6 +119,7 @@ export default {
   width: calc(100% - 40px);
   /* height: calc(100% - 40px); */
   padding: 20px;
+  padding-top: 0;
 }
 .tool-container {
   position: fixed;
@@ -95,6 +128,8 @@ export default {
   align-items: center;
   height: 50px;
   width: calc(100% - 40px);
+  background: white;
+  z-index: 999;
 }
 .search-container {
   width: 70%;
@@ -132,7 +167,7 @@ export default {
   margin-top: 60px;
   left: 0;
   width: 100%;
-
+  margin-bottom: 20px;
 }
 .image-slot {
   font-size: 40px;
