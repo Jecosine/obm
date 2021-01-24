@@ -24,21 +24,36 @@
     </div>
     <div id="content-container">
       <el-row :gutter="20">
-        <el-col :span="8" v-for="(item, i) in sourceData" class="item-container" :key="i" >
-          <div class="item-cover-container" @click="$router.push({path:'/epub'})">
-            <el-image class="item-cover" fit="cover" :src="item.cover || 'https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg'">
+        <el-col
+          :span="8"
+          v-for="(item, i) in sourceData"
+          class="item-container"
+          :key="i"
+        >
+          <div
+            class="item-cover-container"
+            @click="$router.push({ path: '/epub' })"
+          >
+            <el-image
+              class="item-cover"
+              fit="cover"
+              :src="
+                item.cover ||
+                  'https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg'
+              "
+            >
               <div slot="error" class="image-slot">
                 <i class="el-icon-notebook-1"></i>
               </div>
             </el-image>
           </div>
-          <div class="item-title">{{item.name}}</div>
+          <div class="item-title">{{ item.name }}</div>
         </el-col>
       </el-row>
     </div>
     <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
-    <bottom />
+    <bottom :current="pageName" />
   </div>
 </template>
 
@@ -56,41 +71,42 @@ export default {
   },
   data() {
     return {
+      pageName: "Home",
       sourceData: [
         {
           name: "Test Book 1",
           cover: "l",
         },
         {
-          name: "Test Book 1",
-          cover: "",
-        },
-        {
-          name: "Test Book 1",
-          cover: "",
-        },
-        {
-          name: "Test Book 1",
-          cover: "",
-        },
-        {
-          name: "Test Book 1",
+          name: "Test Book 2",
           cover: "l",
         },
         {
-          name: "Test Book 1",
+          name: "Test Book 3",
+          cover: "ll",
+        },
+        {
+          name: "Test Book 4",
+          cover: "l",
+        },
+        {
+          name: "Calibre Manual",
+          cover: "l",
+        },
+        {
+          name: "Introduction to Algorithm",
+          cover: "l",
+        },
+        {
+          name: "Twilight",
+          cover: "l",
+        },
+        {
+          name: "Amazing Side",
           cover: "",
         },
         {
-          name: "Test Book 1",
-          cover: "",
-        },
-        {
-          name: "Test Book 1",
-          cover: "",
-        },
-        {
-          name: "Test Book 1",
+          name: "Common Sense",
           cover: "l",
         },
         {
@@ -173,6 +189,5 @@ export default {
   font-size: 40px;
   text-align: center;
   color: #606366;
-  
 }
 </style>

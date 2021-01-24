@@ -1,14 +1,14 @@
 <!--
  * @Author: Jecosine
  * @Date: 2021-01-05 07:52:23
- * @LastEditTime: 2021-01-05 08:36:55
+ * @LastEditTime: 2021-01-07 01:47:45
  * @LastEditors: Jecosine
  * @Description: Bottom navigation
 -->
 <template>
   <div id="bottom-navigation">
       <el-row>
-          <el-col class="button-container" v-for="(item, i) in defaltConfig" :span="8" :key="i">
+          <el-col :class="{'button-container':true, 'selected': current===item.name}" v-for="(item, i) in defaltConfig" :span="8" :key="i">
               <div class="icon-container">
                   <i :class="item.icon"></i>
               </div>
@@ -24,7 +24,8 @@
 export default {
     name: "bottom",
     props: {
-        config: Object
+        config: Object,
+        current: String
     },
     data() {
         return {
@@ -73,5 +74,7 @@ export default {
 .text-container {
     font-size: 0.6em;
 }
-
+.selected {
+    color: teal;
+}
 </style>

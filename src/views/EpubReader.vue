@@ -1,13 +1,13 @@
 <!--
  * @Author: Jecosine
  * @Date: 2021-01-06 20:24:35
- * @LastEditTime: 2021-01-06 23:34:23
+ * @LastEditTime: 2021-01-07 01:50:45
  * @LastEditors: Jecosine
  * @Description: Epub reader
 -->
 <template>
   <div>
-    <div class="title">
+    <div class="title" v-show="showTitle">
       <div class="back" @click="$router.push({ path: '/' })">
         <i class="fa fa-chevron-left"></i>
       </div>
@@ -26,38 +26,78 @@
       <div class="center" @click="openMenu"></div>
       <div class="right" @click="nextPage"></div>
     </div>
-    <div class="bottom-container">
+    <div class="bottom-container" v-show="showTitle">
       <div class="menu">
-          <i class="fa fa-bars"></i>
+        <i class="fa fa-bars"></i>
       </div>
       <div class="bright">
-          <i class="fa fa-sun-o" aria-hidden="true"></i>
+        <i class="fa fa-sun-o" aria-hidden="true"></i>
       </div>
       <div class="progress">
-          <i class="fa fa-forward" aria-hidden="true"></i>
-
+        <i class="fa fa-forward" aria-hidden="true"></i>
       </div>
       <div class="font">
-          <i class="fa fa-font" aria-hidden="true"></i>
-
+        <i class="fa fa-font" aria-hidden="true"></i>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import "jszip";
+// import jszip from  "jszip";
 import Epub from "epubjs";
 const BOOK_URL = "http://127.0.0.1:8888/test2/";
 global.ePub = Epub;
 export default {
   data() {
     return {
+      showTitle: false,
       book: null,
+      fontSize: 16,
+      customTheme: [
+        {
+          name: "default",
+          style: {
+            body: {
+              color: '#000000',
+              background: '#ffffff'
+            }
+          }
+        },
+        {
+          name: "dark",
+          style: {
+            body: {
+              color: '#ffffff',
+              background: '#000000'
+            }
+          }
+        },
+        {
+          name: "smooth",
+          style: {
+            body: {
+              color: '#666066',
+              background: '#999099'
+            }
+          }
+        }
+      ]
     };
   },
   created() {},
   mounted() {
+    // get param
+    this.bookId = this.$route.params.id;
+    // get real file address
+    this.$axios.get("/api/book/get/" + this.bookId).then((res) => {
+      console.log(res);
+      if (res.data && res.data.status === 200) {
+        this.realUrl = res.data.data.url;
+      } else {
+        this.$message.error("get book failed");
+      }
+    });
     this.book = new Epub(BOOK_URL);
     this.rendition = this.book.renderTo("reader", {
       width: false,
@@ -65,8 +105,28 @@ export default {
       method: "default",
     });
     this.rendition.display();
+    // get theme
+    this.themes = this.rendition.themes;
+    this.registerTheme();
+    this.themes.select("default");
   },
   methods: {
+    registerTheme() {
+      this.customTheme.forEach(theme => {
+        this.themes.register(theme.name, theme.style)
+      });
+    },
+    setFontSize() {
+      if(this.themes) {
+        this.themes.setFontSize(this.fontSize + 'px');
+      }
+    },
+    setBrightness() {
+
+    },
+    openMenu() {
+      this.showTitle = !this.showTitle;
+    },
     prevPage() {
       if (this.rendition) {
         this.rendition.prev();
@@ -76,8 +136,7 @@ export default {
       if (this.rendition) {
         this.rendition.next();
       }
-    },
-    openMenu() {},
+    }
   },
 };
 </script>
@@ -142,10 +201,10 @@ export default {
   z-index: 1000;
   box-shadow: 0 -8px 8px rgba(0, 0, 0, 0.15);
   div {
-      height: 60px;
-      line-height: 60px;
-      flex: 1;
-      text-align: center;
+    height: 60px;
+    line-height: 60px;
+    flex: 1;
+    text-align: center;
   }
 }
 </style>
